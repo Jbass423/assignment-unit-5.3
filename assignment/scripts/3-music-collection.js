@@ -1,11 +1,52 @@
 console.log('***** Music Collection *****')
 // Safe Zone -- Write code below this line
 
+let myCollection = [
+];
+const max = 100 ; 
+
+function addToCollection(collection, title, artist, yearPublished) {
+  myCollection.push(title)
+  myCollection.push(collection)
+  myCollection.push(artist)
+  myCollection.push(yearPublished)
+  return 
+};
+
+let Korn = {
+  artist: "korn",
+  album: `follow the leader`,
+  yearPublished: "1995",
+  collection: `rock`
+};
 
 
 
+let tool = {
+  artist: "tool",
+  album: "schism",
+  yearPublished: "1996",
+  collection: "rock"
+}
 
 
+addToCollection(Korn);
+addToCollection(tool);
+console.log(myCollection);
+
+
+
+// dont write past this line its for the next problem 
+
+function showCollection(collection) {
+  for (let i = 0; i < myCollection.length; i++) {
+    console.log("in collection", showCollection)
+    
+  }
+  return 
+}
+ 
+  
 
 
 
