@@ -1,52 +1,65 @@
 console.log('***** Music Collection *****')
 // Safe Zone -- Write code below this line
 
-let myCollection = [
-];
-const max = 100 ; 
+let myCollection = [];
 
-function addToCollection(collection, title, artist, yearPublished) {
-  myCollection.push(title)
-  myCollection.push(collection)
-  myCollection.push(artist)
-  myCollection.push(yearPublished)
-  return 
+
+
+function addToCollection(collection, artist, yearPublished, title) {
+  let newalbum = {
+    artist: artist,
+    yearPublished: yearPublished,
+    title: title
+  };
+  collection.push(newalbum);
+  return newalbum;
 };
 
-let Korn = {
-  artist: "korn",
-  album: `follow the leader`,
-  yearPublished: "1995",
-  collection: `rock`
-};
+addToCollection(myCollection, "korn", 1995, "follow the leader");
+addToCollection(myCollection, "tool", 1996, "schism");
+addToCollection(myCollection, "limp bizkit", 1999, "break stuff");
+addToCollection(myCollection, "alfon", 2020, "basta boi");
+addToCollection(myCollection, "pantra", 1988, "walk");
+addToCollection(myCollection, "lil wayne", 2005, "watch my shoes");
 
-
-
-let tool = {
-  artist: "tool",
-  album: "schism",
-  yearPublished: "1996",
-  collection: "rock"
-}
-
-
-addToCollection(Korn);
-addToCollection(tool);
+myCollection.forEach(album => console.log(album));
 console.log(myCollection);
 
 
 
-// dont write past this line its for the next problem 
-
 function showCollection(collection) {
-  for (let i = 0; i < myCollection.length; i++) {
-    console.log("in collection", showCollection)
-    
-  }
-  return 
-}
- 
-  
+  collection.forEach(album => [
+    console.log(`${album.title} by ${album.artist}, published in ${album.yearPublished}`)
+  ]);
+};
+
+console.log("testing showCollection function:");
+showCollection(myCollection);
+
+function findByArtist(collection, artist) {
+  let results = []; 
+
+  collection.forEach(album => {
+    if (album.artist === artist) {
+      results.push(album);
+    }
+  });
+  return results;
+};
+ console.log("\nTesting findByArtist function:");
+
+ console.log("Albums by artist:", findByArtist(myCollection, "korn"));
+
+console.log("Ablums by unknown artist:", findByArtist(myCollection, "gucci") );
+
+console.log("Albums by tool:", findByArtist(myCollection, "tool"));
+
+
+
+
+
+
+
 
 
 
