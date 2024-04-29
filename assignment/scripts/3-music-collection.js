@@ -5,11 +5,12 @@ let myCollection = [];
 
 
 
-function addToCollection(collection, artist, yearPublished, title) {
+function addToCollection(collection, artist, yearPublished, title, tracks) {
   let newalbum = {
     artist: artist,
     yearPublished: yearPublished,
-    title: title
+    title: title,
+    tracks: tracks
   };
   collection.push(newalbum);
   return newalbum;
@@ -29,7 +30,7 @@ console.log(myCollection);
 
 function showCollection(collection) {
   collection.forEach(album => [
-    console.log(`${album.title} by ${album.artist}, published in ${album.yearPublished}`)
+    console.log(`${album.title} by ${album.artist}, published in ${album.yearPublished}, tracks ${album.tracks}`)
   ]);
 };
 
@@ -55,6 +56,15 @@ console.log("Ablums by unknown artist:", findByArtist(myCollection, "gucci") );
 console.log("Albums by tool:", findByArtist(myCollection, "tool"));
 
 
+
+function search(collection, artist, yearPublished){
+  for (let  i= 0;  i < myCollection.length; i++ ) 
+   if (myCollection.artist === artist && myCollection.yearPublished === yearPublished){
+    console.log("we found a match:", artist, "and:", yearPublished);
+  }
+  return collection
+  
+};
 
 
 
